@@ -8,7 +8,7 @@
       <link href="/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<p>课程主要内容<br>*计算机网络<br>*应用层<br>*传输层<br>*网络层：数据平面<br>*网络层：控制平面<br>*数据链路层和局域网<br>*网络安全<br>*无线和移动网络<br>*多媒体网络<br>*网络管理</p>]]></content>
+        <content type="html"><![CDATA[<p>课程主要内容</p><ul><li>计算机网络</li><li>应用层</li><li>传输层</li><li>网络层：数据平面</li><li>网络层：控制平面</li><li>数据链路层和局域网</li><li>网络安全</li><li>无线和移动网络</li><li>多媒体网络</li><li>网络管理</li></ul><p>第1章：概论<br><font color=red>目标：</font></p><ul><li>了解基本术语和概念</li><li>掌握网络的基本原理</li><li>为后续章节更深入的学习打下基础</li><li>方法：<ul><li>以Internet为例子</li></ul></li></ul><p><font color=red>提纲：</font></p><ul><li>什么是Internet？</li><li>什么是协议？</li><li>网络边缘</li><li>接入网、物理媒体</li><li>网络核心：分组交换、线路交换</li><li>Internet&#x2F;ISP结构</li><li>性能：丢包、延时、吞吐量</li><li>协议层次、服务模型</li><li>历史</li></ul>]]></content>
       
       
       
@@ -21,20 +21,7 @@
       <link href="/2024/08/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/08/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第二篇文章</title>
-      <link href="/2024/08/25/2024-8-25-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/2024/08/25/2024-8-25-%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<p>断了一个月，重新开始</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="长期更新…"><a href="#长期更新…" class="headerlink" title="长期更新…"></a><font color=red>长期更新…</font></h2><blockquote><p>老师教导我们 “一个完整的软件的诞生不单单只是写代码，也不仅靠程序员。个人技术固然重要，但放在整个软件工程中也显得微不足道”</p></blockquote><blockquote><p>有两种人 “一种是遵守软件工程开发规则的，我们称之为工程师；一种是不遵守软件工程开发规则的，我们称之为码农。”</p></blockquote><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul><li><a href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%9F%BA%E7%A1%80">第一部分 软件工程基础</a></li><li><a href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E7%BB%93%E6%9E%84%E5%8C%96%E6%96%B9%E6%B3%95">第二部分 结构化方法</a></li><li><a href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95">第三部分 面向对象方法</a></li><li><a href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E8%BD%AF%E4%BB%B6%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%AE%A1%E7%90%86">第四部分 软件过程及管理</a></li><li><a href="#%E7%AC%AC%E4%BA%94%E9%83%A8%E5%88%86-%E7%8E%B0%E4%BB%A3%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91">第五部分 现代软件开发</a></li></ul><h2 id="第一部分-软件工程基础"><a href="#第一部分-软件工程基础" class="headerlink" title="第一部分 软件工程基础"></a>第一部分 软件工程基础</h2><ul><li><h3 id="第1章-软件发展史及软件工程"><a href="#第1章-软件发展史及软件工程" class="headerlink" title="第1章 软件发展史及软件工程"></a>第1章 软件发展史及软件工程</h3></li><li><h3 id="第2章-软件生命周期"><a href="#第2章-软件生命周期" class="headerlink" title="第2章 软件生命周期"></a>第2章 软件生命周期</h3></li></ul><h2 id="第1章-软件发展史及软件工程-1"><a href="#第1章-软件发展史及软件工程-1" class="headerlink" title="第1章 软件发展史及软件工程"></a>第1章 软件发展史及软件工程</h2><h3 id="1-1-软件的发展历史"><a href="#1-1-软件的发展历史" class="headerlink" title="1.1 软件的发展历史"></a>1.1 软件的发展历史</h3><ul><li>第一阶段 程序的使用者即是程序的编写者</li><li>第二阶段 允许多用户同时使用计算机的操作系统以及通过计算机进行实时控制的系统。小的软件作  坊开始出现，开发人员可以有组织地完成一些小型软件产品的开发</li><li>第三阶段 计算机由单一大型机器走向分布式，由多个分散的计算机协同完成处理任务</li><li>第四阶段 计算机计算能力飞速发展，桌面系统、面向对象技术、专家系统、人工智能、并行计算等开始出现。</li></ul><h3 id="1-2-软件的定义与特点"><a href="#1-2-软件的定义与特点" class="headerlink" title="1.2 软件的定义与特点"></a>1.2 软件的定义与特点</h3><center><strong><font color=red>软件 ≠ 程序</font></strong></center><ul><li>计算机软件是由专业人员开发并长期维护的软件产品</li><li>软件 &#x3D; <font color=red>程序 + 相关数据 + 说明文档</font><ul><li>程序：计算机可以接受的一系列指令，运行时可以提供所要求的功能和性能；</li><li>数据：使得程序能够适当地操作信息的数据结构</li><li>文档：描述程序的研制过程、方法和使用的图文资料</li></ul></li></ul><ul><li><strong>特点：（略）</strong></li></ul><h3 id="1-3-软件危机"><a href="#1-3-软件危机" class="headerlink" title="1.3 软件危机"></a>1.3 软件危机</h3><ul><li><strong><font color=red>1968年，北大西洋公约组织的计算科学家在联邦德国加米实施召开的国际学术会议上，第一次提出了“软件危机”</font></strong></li><li><h5 id="软件危机的表现"><a href="#软件危机的表现" class="headerlink" title="软件危机的表现"></a>软件危机的表现</h5><ul><li>开发出来的软件产品不能完全满足用户要求，即软件产品的功能或特性与需求不符。</li><li>软件的开发进度、成本估算不准确。</li><li>软件产品质量难以得到保障，系统功能难以发挥。</li><li>软件开发生产率的提高赶不上硬件的发展和人们需求的增长</li><li>相对硬件而言，软件的成本不断提高</li><li>软件文档资料不完备，并存在文档内容和软件产品不符合的情况，软件维护困难</li></ul></li><li><h5 id="软件危机的原因"><a href="#软件危机的原因" class="headerlink" title="软件危机的原因"></a>软件危机的原因</h5><ul><li>人们对产品认识的不足以及对软件开发的内在规律理解的偏差是软件危机产生的原因</li></ul></li><li><h5 id="软件危机的启示"><a href="#软件危机的启示" class="headerlink" title="软件危机的启示"></a>软件危机的启示</h5><ul><li>应该更加深刻的认识到软件的特性以及<strong><font color=red>软件开发的内在规律</font></strong></li></ul></li></ul><h3 id="1-4-软件工程"><a href="#1-4-软件工程" class="headerlink" title="1.4 软件工程"></a>1.4 软件工程</h3><ul><li><strong>1968年，在西北大西洋公约组织举行的一次学术会议上，首次提出了<font color=red>软件工程</font>的概念</strong></li><li>IEEE(Institute of Electrical and Electronics Engineers)对软件工程定义：软件工程是将系统的、规范的、可度量化的工程化方法应用用于软件开发、运行和维护的全过程及上述方法的研究</li></ul><h3 id="1-5-软件开发方法"><a href="#1-5-软件开发方法" class="headerlink" title="1.5 软件开发方法"></a>1.5 软件开发方法</h3><p><strong>（略）</strong></p><h3 id="1-6-软件工程知识体系"><a href="#1-6-软件工程知识体系" class="headerlink" title="1.6 软件工程知识体系"></a>1.6 软件工程知识体系</h3><p>- IEEE在2014年发布的《软件工程知识体系指南》中将软件工程知识体系划分为以下15个知识领域</p><ol><li><font color=red>软件需求</font></li><li><font color=red>软件设计</font></li><li><font color=red>软件构建</font></li><li><font color=red>软件测试</font></li><li><font color=red>软件维护</font></li><li>软件配置管理</li><li>软件工程管理</li><li>软件工程过程</li><li><font color=red>软件工程模型和方法</font></li><li>软件质量</li><li>软件工程职业实践</li><li>软件工程经济学</li><li>计算基础</li><li>数学基础</li><li>工程基础</li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li><h3 id="第一章主要介绍了软件工程的历史背景和基本概念，为后续章节的学习奠定了基础。通过本章的学习，我们对软件工程有了一个全面的认识，接下来将深入探讨各个具体领域的知识和方法"><a href="#第一章主要介绍了软件工程的历史背景和基本概念，为后续章节的学习奠定了基础。通过本章的学习，我们对软件工程有了一个全面的认识，接下来将深入探讨各个具体领域的知识和方法" class="headerlink" title="第一章主要介绍了软件工程的历史背景和基本概念，为后续章节的学习奠定了基础。通过本章的学习，我们对软件工程有了一个全面的认识，接下来将深入探讨各个具体领域的知识和方法"></a>第一章主要介绍了软件工程的历史背景和基本概念，为后续章节的学习奠定了基础。通过本章的学习，我们对软件工程有了一个全面的认识，接下来将深入探讨各个具体领域的知识和方法</h3></li></ul><h2 id="展望"><a href="#展望" class="headerlink" title="展望"></a>展望</h2><ul><li><h3 id="从第二章开始，我们将进入软件工程的实质性内容，通过系统学习和实践，逐步掌握软件开发的全过程和管理技巧。希望这些笔记能为大家提供一个清晰的学习路线和使用的知识框架"><a href="#从第二章开始，我们将进入软件工程的实质性内容，通过系统学习和实践，逐步掌握软件开发的全过程和管理技巧。希望这些笔记能为大家提供一个清晰的学习路线和使用的知识框架" class="headerlink" title="从第二章开始，我们将进入软件工程的实质性内容，通过系统学习和实践，逐步掌握软件开发的全过程和管理技巧。希望这些笔记能为大家提供一个清晰的学习路线和使用的知识框架"></a>从第二章开始，我们将进入软件工程的实质性内容，通过系统学习和实践，逐步掌握软件开发的全过程和管理技巧。希望这些笔记能为大家提供一个清晰的学习路线和使用的知识框架</h3></li></ul>]]></content>
       
       
       
@@ -70,9 +57,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>视频</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -103,9 +90,9 @@
     
     
     <entry>
-      <title>视频</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
