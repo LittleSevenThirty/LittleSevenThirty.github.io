@@ -8,7 +8,7 @@
       <link href="/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<p>课程主要内容</p><ul><li>计算机网络</li><li>应用层</li><li>传输层</li><li>网络层：数据平面</li><li>网络层：控制平面</li><li>数据链路层和局域网</li><li>网络安全</li><li>无线和移动网络</li><li>多媒体网络</li><li>网络管理</li></ul><p>第1章：概论<br><font color=red>目标：</font></p><ul><li>了解基本术语和概念</li><li>掌握网络的基本原理</li><li>为后续章节更深入的学习打下基础</li><li>方法：<ul><li>以Internet为例子</li></ul></li></ul><p><font color=red>提纲：</font></p><ul><li>什么是Internet？</li><li>什么是协议？</li><li>网络边缘</li><li>接入网、物理媒体</li><li>网络核心：分组交换、线路交换</li><li>Internet&#x2F;ISP结构</li><li>性能：丢包、延时、吞吐量</li><li>协议层次、服务模型</li><li>历史</li></ul><p>1.2 因特网概述<br>  1 网络、互连网（互联网）和因特网<br>  2 因特网发展的三个阶段<br>  3 因特网的标准化工作<br>  4 因特网的组成</p><p>1 网络、互连网（互联网）和因特网</p><ul><li>网络(Network)由若干<font color=red>结点</font>(Node)和连接这些结点的<font color=red>链路</font>(Link)组成</li><li>多个网络可以通过路由器互连起来，这样就得到一个覆盖范围更大的网络，即互联网（或互连网），所以互联网是“<font color=red>网络的网络</font>(Network of Networks”</li><li>因特网(Internet)是世界上最大的互连网络<img src="../image/computer_internet1.jpg"></li></ul><blockquote><ul><li><strong><font color=red>注意：internet和Internet的区别</font></strong><br>internet(互联网或互连网)是一个通用名词，它泛指多个计算机网络互连而成的网络，在这些网络之间的通信协议可以是任意的<br>Internet(因特网)是一个专用名词，它指当前全球最大的、开放的、由众多网络相互连接而成的特定计算机网络，它采用TCP&#x2F;IP协议族作为通信规则，其前身是美国的APPANET</li></ul></blockquote>]]></content>
+        <content type="html"><![CDATA[<p>课程主要内容</p><ul><li>计算机网络</li><li>应用层</li><li>传输层</li><li>网络层：数据平面</li><li>网络层：控制平面</li><li>数据链路层和局域网</li><li>网络安全</li><li>无线和移动网络</li><li>多媒体网络</li><li>网络管理</li></ul><p>第1章：概论<br><font color=red>目标：</font></p><ul><li>了解基本术语和概念</li><li>掌握网络的基本原理</li><li>为后续章节更深入的学习打下基础</li><li>方法：<ul><li>以Internet为例子</li></ul></li></ul><p><font color=red>提纲：</font></p><ul><li>什么是Internet？</li><li>什么是协议？</li><li>网络边缘</li><li>接入网、物理媒体</li><li>网络核心：分组交换、线路交换</li><li>Internet&#x2F;ISP结构</li><li>性能：丢包、延时、吞吐量</li><li>协议层次、服务模型</li><li>历史</li></ul><p>1.2 因特网概述<br>  1 网络、互连网（互联网）和因特网<br>  2 因特网发展的三个阶段<br>  3 因特网的标准化工作<br>  4 因特网的组成</p><p>1 网络、互连网（互联网）和因特网</p><ul><li>网络(Network)由若干<font color=red>结点</font>(Node)和连接这些结点的<font color=red>链路</font>(Link)组成</li><li>多个网络可以通过路由器互连起来，这样就得到一个覆盖范围更大的网络，即互联网（或互连网），所以互联网是“<font color=red>网络的网络</font>(Network of Networks”</li><li>因特网(Internet)是世界上最大的互连网络<img src="/image/computer_internet1.jpg"></li></ul><blockquote><ul><li><strong><font color=red>注意：internet和Internet的区别</font></strong><br>internet(互联网或互连网)是一个通用名词，它泛指多个计算机网络互连而成的网络，在这些网络之间的通信协议可以是任意的<br>Internet(因特网)是一个专用名词，它指当前全球最大的、开放的、由众多网络相互连接而成的特定计算机网络，它采用TCP&#x2F;IP协议族作为通信规则，其前身是美国的APPANET</li></ul></blockquote><p>2 因特网发展的三个阶段</p><table><thead><tr><th align="center">从单个网络ARPANET向互联网发展</th><th align="center">逐步建成三级结构的因特网</th><th align="center">逐步形成了多层次ISP结构的因特网</th></tr></thead><tbody><tr><td align="center">1969年，第一个分组交换网<br><font color=red>ARPANET</font></td><td align="center">1985年,NSF围绕六个大型计算机中心<br>建立<font color=red>NSFNET</font></td><td align="center">1993年，NSFNET逐渐被若干个商用因特网主干网替代；政府机构不再负责因特网运营，让各种<font color=red>因特网服务提供者ISP来运营</font></td></tr><tr><td align="center">略</td><td align="center">略</td><td align="center">1994年，<font color=red>万维网WWW技术促使因特网迅猛发展</font></td></tr><tr><td align="center">1983年,<font color=red>TCP&#x2F;IP协议</font>成为ARPANET的标准协议</td><td align="center">略</td><td align="center">1995年,NSFNET停止运作，<font>英特网彻底商业化</font></td></tr></tbody></table><br><ul><li><strong>因特网服务提供者<font color=red>ISP</font>(Internet Service Provider)</strong></li><li><strong>基于ISP的三层结构的因特网</strong><img src="https://img-blog.csdnimg.cn/20210324090557828.png"></li></ul><p>3 因特网的标准化工作</p><ul><li>因特网的标准化工作对因特网的发展起到了非常重要的作用</li><li>因特网在指定其标准上的一个很大的特点是<font color=red>面向公众</font><ul><li>因特网所有的<font color=red>RFC</font>(Request For Comments)技术文档都可从因特网上免费下载;(<a href="http://www.ietf.org/rfc.html">http://www.ietf.org/rfc.html</a>)</li><li>任何人都可以随时用电子邮件发表对某个文档的意见或建议</li></ul></li><li><font color=red>因特网协会ISOC</font>是一个国际性组织，它负责对因特网进行全面管理，以及在全世界范围内促进其发展和使用。<ul><li>因特网体系结构委员会IAB，负责管理因特网有关协议的开发；</li><li>因特网工程IETF，负责研究中短期工程问题，主要针对协议的开发和标准化</li><li>因特网研究部IRTF，从事理论方面的研究和开发一些需要长期考虑的问题</li></ul></li><li>制定英特网的正是标准要经过以下四个阶段<br>(1) 因特网草案（在这个阶段还不是RFC文档）<br>(2) 建议标准（从这个阶段开始就称为RFC文档）<br>(3) 草案标准<br>(4) 因特网标准</li></ul><p>4 因特网的组成</p><ul><li>边缘部分<ul><li>由所有连接在因特网上的<font color=red>主机</font>组成，这部分是<font color=red>用户直接使用</font>的，用来进行<font color=red>通信</font>(传送数据、音频或视频)和<font color=red>资源共享</font></li></ul></li><li>核心部分<ul><li>由<font color=red>大量网络</font>和连接这些网络的<font color=red>路由器</font>组成，这部分是<font color=red>为边缘部分提供服务的</font>(提供连通性和交换)<img src="https://img-blog.csdnimg.cn/20200210202340913.png"></li></ul></li></ul>]]></content>
       
       
       
@@ -57,17 +57,6 @@
     
     
     <entry>
-      <title>视频</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>友联</title>
       <link href="/link/index.html"/>
       <url>/link/index.html</url>
@@ -79,9 +68,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -90,9 +79,20 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>视频</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
