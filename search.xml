@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>标签外挂</title>
+      <link href="/2024/09/04/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/"/>
+      <url>/2024/09/04/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p><strong>文章来源：</strong><br>作者: Jerry<br>链接: <a href="https://butterfly.js.org/posts/4aa8abbe/">https://butterfly.js.org/posts/4aa8abbe/</a><br>來源: Butterfly</p></blockquote><blockquote><p><strong>作者说:</strong></p><ul><li><strong>标签外挂是Hexo独有的功能</strong>,并不是标准的Markdown格式<br>以下写法,只适用于Butterfly主题,用在其他主题上不会有效果,甚至可能会报错,使用前请留意</li><li>标签外挂虽然能为主体带来一些额外的功能和UI方面的强化,但是,标签外挂也有明显的限制,使用时&gt;请留意</li></ul></blockquote><p>1 Note(Bootstrap Callout)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机网络笔记</title>
       <link href="/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/"/>
       <url>/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</url>
@@ -68,9 +81,9 @@
     
     
     <entry>
-      <title>音乐</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
+      <title>视频</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -79,9 +92,9 @@
     
     
     <entry>
-      <title>视频</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>音乐</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
