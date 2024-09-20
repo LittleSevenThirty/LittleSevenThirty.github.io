@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>yaml知识整理</title>
+      <link href="/2024/09/20/yaml%E5%B8%B8%E7%94%A8/"/>
+      <url>/2024/09/20/yaml%E5%B8%B8%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Yaml"><a href="#Yaml" class="headerlink" title="Yaml"></a><font color=red>Yaml</font></h2><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a><font color=orange>概述</font></h2><div class="note simple"><p>yaml是一种标记语言，类似json，但比json简洁，易于阅读和编写。<br>yaml前言是从文件第一行开始的纯文本属性的一部分，它是在Markdown文件中添加元数据的方法之一，是可读的文件级元数据。</p></div><h2 id="语法特色"><a href="#语法特色" class="headerlink" title="语法特色"></a><font color=orange>语法特色</font></h2><h3 id="板块1"><a href="#板块1" class="headerlink" title="板块1"></a><font color=orange>板块1</font></h3><ul><li><strong>YAML支持多行字符串，而JSON不支持</strong><div class="note simple"><p>eg: yaml多行字符串语法：<strong>键: | 值</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">string1:</span> <span class="string">| </span></span><br><span class="line"><span class="string">  &quot;This is a multi-line string \n with some special characters: \t \n \r \f \b</span></span><br><span class="line"><span class="string">  换一行写字符串也是同属于上一行的内容的&quot;</span></span><br></pre></td></tr></table></figure></div></li><li><strong>YANML支持注释，而JSON不支持</strong></li><li><strong>YAML支持数据类型，如整数、浮点数、布尔值、日期、时间、数组、字典等，而JSON只支持字符串、数值、布尔值、数组、字典等数据类型</strong></li></ul><h3 id="板块2-基本语法"><a href="#板块2-基本语法" class="headerlink" title="板块2:基本语法"></a><font color=orange>板块2</font>:基本语法</h3><div class="note simple"><ol><li>大小写敏感</li><li>使用缩进表示层级关系</li><li>不允许使用tab，只允许使用空格, 在不同的编辑器里，tab的宽度不同，导致服务器无法正确识别，最好的是两个空格</li><li>字符串使用双引号，布尔值使用true&#x2F;false,null表示空，整数和浮点数直接写</li><li>缩进的空格不重要，只要相同层级的元素左对齐即可</li><li>‘#’表示注释</li></ol><div class="note warning simple"><p>注意点：</p><ol><li>YAML一般是键值对的形式 键: 值</li><li>键值对的冒号后面一定要有一个空格</li><li>同一个级别不能出现重复的键</li></ol></div><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># eg:</span></span><br><span class="line"><span class="attr">id:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">name:</span> <span class="string">&quot;张三&quot;</span></span><br><span class="line"><span class="attr">job:</span></span><br><span class="line">  <span class="attr">jobid:</span> <span class="number">10086</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">&quot;程序员&quot;</span></span><br></pre></td></tr></table></figure><p><strong>YAML 转 JSON</strong></p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;张三&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;job&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;程序员&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div><h3 id="板块3-对象和数组"><a href="#板块3-对象和数组" class="headerlink" title="板块3: 对象和数组"></a><font color=orange>板块3</font>: 对象和数组</h3><div class="note simple"><p>YAML 支持以下几种数据类型：</p><ol><li>对象：键值对的集合，使用缩进表示层级关系，又称为映射，对应json数据的属性</li><li>数组：一组有序的值，又称为列表</li><li>纯量：单个的，不可再分的，如字符串，布尔值，数字，</li></ol><p><strong>对象</strong></p><ul><li><strong>对象也是一个键值对，只不过其值也是键值对</strong><br><strong>例</strong><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">app:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">little-seven-thirty的个人博客</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">个人博客</span></span><br><span class="line">  <span class="attr">link:</span> <span class="string">little-seven-thirty.cc</span></span><br></pre></td></tr></table></figure></li></ul><p><strong>YAML 转 JSON</strong></p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;app&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;little-seven-thirty的个人博客&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;个人博客&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;little-seven-thirty.cc&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><p><strong>数组</strong></p><ul><li><p><strong>数组写法1： 数组元素用 ‘- ‘ 表示，(要有空格)</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">job:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">python开发</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">前端</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">vue</span></span><br></pre></td></tr></table></figure></li><li><p><strong>数组写法2: 数组元素使用 ‘[]’ 包裹起来</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">job:</span> [<span class="string">python开发</span>, <span class="string">前端</span>, <span class="string">vue</span>]</span><br></pre></td></tr></table></figure></li></ul><p><strong>YAML 转 JSON</strong></p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;job&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;python开发&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;前端&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;vue&quot;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div><h3 id="板块4-锚点和引用"><a href="#板块4-锚点和引用" class="headerlink" title="板块4: 锚点和引用"></a><font color=orange>板块4</font>: 锚点和引用</h3><div class="note simple"><p><strong>重复的内容可以使用&amp;定义成锚点，使用*引用锚点<br>写法如下：<br>锚点: &amp;锚点别名 值<br>引用: *描点别名</strong></p><p><strong>例</strong></p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">server4:</span></span><br><span class="line">  <span class="attr">ip:</span> <span class="string">&amp;ip</span> <span class="number">192.168</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server5:</span></span><br><span class="line">  <span class="attr">ip:</span> <span class="meta">*ip</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8081</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server6:</span></span><br><span class="line">  <span class="attr">ip:</span> <span class="meta">*ip</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8082</span></span><br></pre></td></tr></table></figure><p><strong>特别的</strong></p><div class="tabs" id="t"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="t-1">T 1</button><button type="button" class="tab " data-href="t-2">T 2</button></ul><div class="tab-contents"><div class="tab-item-content active" id="t-1"><div class="note simple"><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">common:</span> <span class="string">&amp;common</span> </span><br><span class="line">  <span class="attr">register:</span> <span class="string">this</span> <span class="string">is</span> <span class="string">a</span> <span class="string">register</span></span><br><span class="line">  <span class="attr">ip:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">  <span class="attr">address:</span> <span class="string">中国</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">person:</span></span><br><span class="line">  <span class="attr">yinyong:</span> <span class="meta">*common</span></span><br><span class="line">  <span class="attr">other:</span> <span class="string">jiushicyf</span></span><br></pre></td></tr></table></figure><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">common<span class="punctuation">:</span> &amp;common </span><br><span class="line">  register<span class="punctuation">:</span> this is a register</span><br><span class="line">  ip<span class="punctuation">:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">  address<span class="punctuation">:</span> 中国</span><br><span class="line"> </span><br><span class="line">person<span class="punctuation">:</span></span><br><span class="line">  yinyong<span class="punctuation">:</span> *common</span><br><span class="line">  other<span class="punctuation">:</span> sbjiushicyf</span><br></pre></td></tr></table></figure></div></div><div class="tab-item-content" id="t-2"><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 嵌入式</span></span><br><span class="line"><span class="attr">common:</span> <span class="string">&amp;common</span> </span><br><span class="line">  <span class="attr">register:</span> <span class="string">this</span> <span class="string">is</span> <span class="string">a</span> <span class="string">register</span></span><br><span class="line">  <span class="attr">ip:</span> <span class="number">192.168</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line">  <span class="attr">address:</span> <span class="string">中国</span></span><br><span class="line"> </span><br><span class="line"><span class="attr">person:</span></span><br><span class="line">  <span class="string">&lt;&lt;:</span> <span class="meta">*common</span></span><br><span class="line">  <span class="attr">other:</span> <span class="string">sbjiushicyf</span></span><br></pre></td></tr></table></figure><p>转JSON</p><figure class="highlight json"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;common&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;register&quot;</span><span class="punctuation">:</span> <span class="string">&quot;this is a register&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;address&quot;</span><span class="punctuation">:</span> <span class="string">&quot;中国&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;person&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;register&quot;</span><span class="punctuation">:</span> <span class="string">&quot;this is a register&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;ip&quot;</span><span class="punctuation">:</span> <span class="string">&quot;192.168.1.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;address&quot;</span><span class="punctuation">:</span> <span class="string">&quot;中国&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;other&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sbjiushicyf&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> yaml </tag>
+            
+            <tag> Study </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>设计模式学习笔记</title>
       <link href="/2024/09/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
       <url>/2024/09/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
@@ -94,17 +115,6 @@
     
     
     <entry>
-      <title>友联</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>关于</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -116,9 +126,9 @@
     
     
     <entry>
-      <title>视频</title>
-      <link href="/movies/index.html"/>
-      <url>/movies/index.html</url>
+      <title>友联</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -130,6 +140,17 @@
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>视频</title>
+      <link href="/movies/index.html"/>
+      <url>/movies/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
