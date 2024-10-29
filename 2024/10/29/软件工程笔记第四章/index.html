@@ -1,0 +1,418 @@
+<!DOCTYPE html><html lang="[&quot;zh-Hans&quot;,&quot;zh-CN&quot;,&quot;default&quot;]" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>软件工程笔记第四章 | LittleSevenThirty⏰</title><meta name="author" content="LittleSevenThirty"><meta name="copyright" content="{&quot;enable&quot;:false,&quot;minCharNumber&quot;:120,&quot;description&quot;:&quot;本文章著作权作者所有，任何形式的装载都请注明出处&quot;}"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="第四章 结构化设计（重点）① 结构化分析与结构化设计的关系  数据流图对软件处理数据的过程进行了建模，可以直接将数据流图映射为结构化软件的体系结构设计 数据流图和数据字典对各个处理的参数进行了定义，可以从数据流图和数据字典导出各个处理的结构 可以结合处理&#x2F;加工逻辑说明、状态转换图等内容来设计各个函数的内部处理过程 从需求的数据模型和数据字典中导出软件系统处理的数据结构以及数据存储">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件工程笔记第四章">
+<meta property="og:url" content="http://little-seven-thirty.cc/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="LittleSevenThirty⏰">
+<meta property="og:description" content="第四章 结构化设计（重点）① 结构化分析与结构化设计的关系  数据流图对软件处理数据的过程进行了建模，可以直接将数据流图映射为结构化软件的体系结构设计 数据流图和数据字典对各个处理的参数进行了定义，可以从数据流图和数据字典导出各个处理的结构 可以结合处理&#x2F;加工逻辑说明、状态转换图等内容来设计各个函数的内部处理过程 从需求的数据模型和数据字典中导出软件系统处理的数据结构以及数据存储">
+<meta property="og:locale">
+<meta property="og:image" content="http://little-seven-thirty.cc/image/SoftwareEngineering.jpg">
+<meta property="article:published_time" content="2024-10-29T06:49:09.000Z">
+<meta property="article:modified_time" content="2024-10-29T14:14:50.133Z">
+<meta property="article:author" content="LittleSevenThirty">
+<meta property="article:tag" content="Study">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://little-seven-thirty.cc/image/SoftwareEngineering.jpg"><link rel="shortcut icon" href="/image/cat.png"><link rel="canonical" href="http://little-seven-thirty.cc/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: LittleSevenThirty","link":"链接: ","source":"来源: LittleSevenThirty⏰","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '软件工程笔记第四章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-10-29 22:14:50'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><style>#article-container.post-content h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { -webkit-animation: avatar_turn_around 1s linear infinite; -moz-animation: avatar_turn_around 1s linear infinite; -o-animation: avatar_turn_around 1s linear infinite; -ms-animation: avatar_turn_around 1s linear infinite; animation: avatar_turn_around 1s linear infinite; }</style><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/cat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/star.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="LittleSevenThirty⏰"><span class="site-name">LittleSevenThirty⏰</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">软件工程笔记第四章</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-10-29T06:49:09.000Z" title="发表于 2024-10-29 14:49:09">2024-10-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-29T14:14:50.133Z" title="更新于 2024-10-29 22:14:50">2024-10-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="软件工程笔记第四章"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="第四章-结构化设计（重点）"><a href="#第四章-结构化设计（重点）" class="headerlink" title="第四章 结构化设计（重点）"></a>第四章 结构化设计（重点）</h2><div class="note simple"><p><font color="pink">① 结构化分析与结构化设计的关系</font></p>
+<ul>
+<li>数据流图对软件处理数据的过程进行了建模，可以直接将数据流图映射为结构化软件的体系结构设计</li>
+<li>数据流图和数据字典对各个处理的参数进行了定义，可以从数据流图和数据字典导出各个处理的结构</li>
+<li>可以结合处理&#x2F;加工逻辑说明、状态转换图等内容来设计各个函数的内部处理过程</li>
+<li>从需求的数据模型和数据字典中导出软件系统处理的数据结构以及数据存储</li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four1.png" alt="结构化分析与结构化设计的关系"></li>
+</ul>
+</div>
+
+<div class="note simple"><p><font color="pink">② 模块及模块独立性</font><br>考虑：？</p>
+<ul>
+<li>结构化程序设计中的模块是什么？</li>
+<li>如何评价模块的独立性？</li>
+</ul>
+<p>答：</p>
+<ul>
+<li>结构化程序设计语言提供了函数、宏定义等<font color="red">模块化机制</font>,允许软件人员将复杂的软件功能分解为多个独立的功能模块、降低软件开发的复杂度</li>
+</ul>
+</div>
+
+<div class="note info simple"><p><font size="3" color="red">内聚</font><br><font color="red">内聚</font>从模块的功能角度出发来度量模块内部各个元素存在的必要性。内聚程度较高的模块应当功能唯一，且模块内部的所有元素对于实现模块功能不可或缺的<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four2.png" alt="内聚分类"></p>
+<div class="tabs" id="内聚"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="内聚-1"><strong>功能内聚</strong></button><button type="button" class="tab " data-href="内聚-2"><strong>顺序内聚</strong></button><button type="button" class="tab " data-href="内聚-3"><strong>信息内聚</strong></button><button type="button" class="tab " data-href="内聚-4"><strong>通信内聚</strong></button><button type="button" class="tab " data-href="内聚-5"><strong>过程内聚</strong></button><button type="button" class="tab " data-href="内聚-6"><strong>时间内聚</strong></button><button type="button" class="tab " data-href="内聚-7"><strong>逻辑内聚</strong></button><button type="button" class="tab " data-href="内聚-8"><strong>巧合内聚</strong></button></ul><div class="tab-contents"><div class="tab-item-content active" id="内聚-1"><p><font size="5">功能内聚</font><br>模块内所有元素均属于一个整体，共同完成模块的单一功能，是<font color="red">最高程度</font>的内聚。模块内部各个元素对于模块的单一功能而言是不可或缺的<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four3.png" alt="功能内聚"></p></div><div class="tab-item-content" id="内聚-2"><p>模块内部封装了业务处理的多个功能步骤。上一个步骤的输出作为下一个步骤的输入，依次执行。<br>顺序内聚一般是多个“动词”的排列，如，查找并打印结果<br>顺序内聚将多个功能步骤封装到了一个模块内，不利于代码的重用<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four4.png" alt="顺序内聚"></p></div><div class="tab-item-content" id="内聚-3"><p>将共享同一个数据的多个功能封装在一起，并且允许模块根据不同的需求来执行特定的功能，以达到信息隐藏得到目的，则可以认为该模块出现了信息内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four5.png" alt="alt text"></p></div><div class="tab-item-content" id="内聚-4"><p>如果模块内部封装了一些系列特定步骤顺序相关的元素，并且模块内的所有元素都使用同一个输入数据或产生了同一个输出结果，则认为在模块内存在通信内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four6.png" alt="alt text"></p></div><div class="tab-item-content" id="内聚-5"><p>如果模块内的处理元素是顺序相关的，即相邻元素之间没有数据传递也必须以特定次序执行，则可以认为该模块存在过程内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four7.png" alt="alt text"></p></div><div class="tab-item-content" id="内聚-6"><p>如果模块内部包含各个处理元素之间必须在同一段时间内执行，或者处理元素之间允许设置一定的时间限制，则该模块内存在时间内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four8.png" alt="alt text"></p></div><div class="tab-item-content" id="内聚-7"><p>如果某个模块将多个相关的功能组合在一起，且每个功能的执行由传入模块的参数来决定，则可以认为该模块内存在逻辑内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four9.png" alt="alt text"></p></div><div class="tab-item-content" id="内聚-8"><p>如果模块内的各个元素没有必要联系，或者即使有联系，也是很松散的，则称该模块内存在巧合内聚或偶然内聚<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four10.png" alt="alt text"></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+
+<div class="note info simple"><p>一般而言，软件设计人员在进行模块设计时应当使用内聚较高的功能内聚，减少或避免使用内聚度较低的顺序内聚、信息内聚、通信内聚、过程内聚，尽量不要使用时间内聚、逻辑内聚和巧合内聚</p>
+</div>
+
+<p><font size="3" color="red">耦合</font><br><font color="red">耦合</font>用于评价不同函数模块之间的连接程度<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four11.png" alt="耦合分类"></p>
+<div class="tabs" id="耦合"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="耦合-1"><strong>非直接耦合</strong></button><button type="button" class="tab " data-href="耦合-2"><strong>数据耦合</strong></button><button type="button" class="tab " data-href="耦合-3"><strong>标记耦合</strong></button><button type="button" class="tab " data-href="耦合-4"><strong>控制耦合</strong></button><button type="button" class="tab " data-href="耦合-5"><strong>外部耦合</strong></button><button type="button" class="tab " data-href="耦合-6"><strong>公共耦合</strong></button><button type="button" class="tab " data-href="耦合-7"><strong>内容耦合</strong></button></ul><div class="tab-contents"><div class="tab-item-content active" id="耦合-1"><p>模块间没有直接联系，它们之间的联系完全通过主模块或者调用模块来实现的<br>eg: 如下图中，模块A和模块B之间没有任何联系，它们唯一的关系就是被同一个模块调用<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four12.png" alt="非直接耦合"></p></div><div class="tab-item-content" id="耦合-2"><p>如果模块之间存在参数调用关系，且模块之间通过传值来交换信息，则可以认为调用模块和被调用模块之间存在数据耦合<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four13.png" alt="数据耦合"></p></div><div class="tab-item-content" id="耦合-3"><p>如果模块之间存在调用关系，且调用过程中引用、地址等方式来进行单向或者双向值传递，则可以认为调用模块和被调用模块之间存在标记耦合<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four14.png" alt="alt text"></p></div><div class="tab-item-content" id="耦合-4"><p>如果模块之间传递的信息中存在控制信息，即调用模块通过参数、开关来控制被调用模块的内部运行，则可以认为调用模块之间存在控制耦合</p>
+<p>如下图，调用模块通过参数Flag来控制被调用模块内部的多个功能<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four15.png" alt="alt text"></p></div><div class="tab-item-content" id="耦合-5"><p><font size="8">多个模块通过全局变量进行数据交换和共享</font></p>
+<p>如图,模块A和B通过全局变量交换或共享数据，全局变量不利于程序调试和代码复用，在软件开发中应当尽量避免使用外部耦合<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four16.png" alt="alt text"></p></div><div class="tab-item-content" id="耦合-6"><p>多个模块之间共享的全局数据为复杂数据类型，如链表、内存块等，则可以认为这些共享数据的模块之间出现了公共耦合<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four17.png" alt="alt text"></p></div><div class="tab-item-content" id="耦合-7"><p>如果一个模块通过特殊手段直接访问另一个模块的内部数据，或者一个模块通过非正常入口转到另一个模块的内部以及被调用模块通过加注标记提供多个入口时，则可以认为这些模块之间出现了内容耦合<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four18.png" alt="alt text"></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<div class="note info simple"><p>在进行结构化设计时，软件设计人员应<font color=red>尽量使用</font>非直接耦合、数据耦合和标记耦合，<font color=red>减少或避免使用</font>控制耦合、外部耦合和公共耦合,<font color=red>完全不使用</font>内容耦合</p>
+</div>
+</div>
+
+
+<div class="note simple"><p><font size="10">2.3 结构化设计启发式规则</font><br>结构化设计启发式规则是一组指导原则，帮助软件设计人员提高模块的独立性和软件的可维护性有如下一些关键的启发式规则</p>
+<ul>
+<li>改进软件结构以提高模块独立性</li>
+<li>模块规模应该适中，以便于理解和维护</li>
+<li>软件架构的深度、宽度、扇入、扇出应该适中，以保持结构的平衡</li>
+<li>模块的作用域应该在控制区域之内，以确保模块的功能可以被正确预测</li>
+<li>模块的功能应该可以预测，以便于其它模块的调用和集成</li>
+</ul>
+<div class="note info simple"><p>其中</p>
+<ol>
+<li><p>在模块规模应该适中这一板块，经验表明，一个模块的规模不应过大，最好能写在一页纸内，有人从心理学角度研究得知，当一个模块包含的语句数超过30以后，模块的可理解程度迅速下降</p>
+</li>
+<li><p>软件架构的深度、宽度、扇入、扇出应当适中首先：</p>
+<ol>
+<li>深度：表示软件结构中从顶层模块到底层模块的层数</li>
+<li>宽度：表示控制的总分布</li>
+<li>扇出数：指一个模块直接控制下属的模块个数</li>
+<li>扇入数：指一个模块的直接上属模块个数<br>一个好的软件结构的形态准则是：顶部宽度小，中部宽度最大，底部宽度次之；在结构顶部有较高<br>例如：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four19.png" alt="alt text"><br><font color=orange>人类的认知过程遵守Miller法则:一个人在任何时候都只能把注意力集中在(5~9)个知识块上</font></li>
+</ol>
+</li>
+<li><p>深度、宽度、扇出和扇入都应当适中</p>
+<ol>
+<li>一个设计良好的典型系统的平均扇出通常是3或4(扇出的上限通常是5~9)</li>
+<li>设计良好的软件结构通常是顶层扇出比较高，中层扇出比较少，底层扇入到公共的实用模块中去(底层模块有高扇入)</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+<div class="note simple"><p><font size="10">3. 系统结构设计</font><br>什么是软件的系统结构？<br>软件的系统架构是什么？<br>你觉得如何才能得到软件的架构设计</p>
+<p>一般而言，<font color=red>软件结构包括软件的模块结构和数据结构</font><br>在结构化程序设计中，模块结构就是指软件系统中各个模块或者函数的组成架构，而数据的结构表示数据由哪些部分组成。</p>
+<p><font size="7">3.1 系统结构图</font></p>
+<div class="note simple"><ul>
+<li>系统结构图，又称为层次图，是软件系统结构整体设计的图形化显示。</li>
+<li>在结构化设计阶段，在数据流图的基础上进行设计，将数据流图映射为对应的系统结构图。</li>
+<li>设计者可以直接采用对应的<font color=red>处理名称</font>来命名系统模块。</li>
+<li>为了便于后期跟踪各个模块的调用关系，软件设计人员也可以为系统结构图中各个模块增加编号。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four20.png" alt="alt text"></li>
+<li>根据数据流向不同，系统结构图中的模块可以分为以下四种:</li>
+</ul>
+<div class="note simple"><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four21.png" alt="alt text"><br>传入模块：负责从下属模块中获取数据，并将数据处理以后提交给上级模块。<br>传出模块：负责从上及模块中获取数据，并将数据处理以后传递给下级模块。<br>变换模块：负责对上级模块传入的数据进行处理，再将处理后的数据返回给上级调用模块。<br>协调模块：负责协调管理多个模块，共同完成业务功能，通常，协调模块位于系统结构图的高层。</p>
+</div>
+<ul>
+<li>加入模块的调用逻辑的系统结构图</li>
+<li><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four22.png" alt="调用方式"><br>简单调用：上层模块直接调用下层模块。<br>选择调用：上层模块根据业务逻辑判断结果来选择调用下层模块。<br>循环调用: 上层模块根据内部逻辑判断，循环调用下层模块，直至内部循环条件终止。</li>
+</ul></div>
+
+<p><font size="7">3.2 HIPO图</font></p>
+<div class="note simple"><ul>
+<li>层次图加输入&#x2F;处理&#x2F;输出图(HIPO)是美国IBM公司发明的一种表明软件模块隶属关系和输入、处理、输出的图示工具。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four23.png" alt="IPO表">和<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four24.png" alt="HIPO图"></li>
+</ul>
+</div>
+
+<p><font size="7">3.3 面向数据流的设计方法</font></p>
+<div class="note simple"><p>包含数据流图<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four25.png" alt="数据流图"><br>和系统结构<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four26.png" alt="系统结构"><br>它们的关系是由数据流图映射为系统结构。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four27.png" alt="数据流的组成"></p>
+<ul>
+<li>1.变换流<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four28.png" alt="交换流"></li>
+</ul>
+<div class="note simple"><ul>
+<li>在变换流中，输入数据模块负责从外界获取各种输入信息；</li>
+<li>变换数据模块是变换流的核心，遵循特定的业务规则，对输入系统的数据进行处理；</li>
+<li>设计步骤<ul>
+<li>(1) 复查并精华数据流图<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four29.png" alt="系统结构图的设计步骤"></li>
+<li>(2) 确定输入流和输出流的边界，孤立出变换中心<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four30.png" alt="系统结构图的设计步骤2"></li>
+<li>(3) 进行第一级分解，设计顶层和第一层模块<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four31.png" alt="系统结构图的设计步骤4"></li>
+<li>(4) 进行二级分解，设计中，下层模块<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four32.png" alt="系统结构图的设计步骤5"></li>
+<li>(5) 软件层次结构精化，如下是精化后的软件层次结构图<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four33.png" alt="系统结构图的设计步骤6"></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<ul>
+<li>2.事物流<div class="note simple"><p>事物流是根据状态或处理结果将业务进行<font color=red>分类处理</font>的数据流。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four34.png" alt="事物流"></p>
+</div></li>
+</ul></div>
+</div>
+
+<div class="note simple"><p><font size="10">4. 数据设计</font></p>
+<ul>
+<li>高级程序设计语言的数据类型的作用是什么？</li>
+<li>从结构化分析中，哪些内容可以协助进行数据设计？</li>
+<li>如果你来设计数据，你认为需要注意哪些内容？</li>
+</ul>
+<p><font size="7">4.1 数据元素设计</font></p>
+<div class="note simple"><ul>
+<li>原子类型，例如：int char float double等。</li>
+<li>固定聚合类型，例如：数组，不带指针的结构体。</li>
+<li>可变聚合类型，例如：长度不定的结构体。</li>
+</ul>
+</div>
+
+<p><font size="7">4.2 数据结构设计</font></p>
+<div class="note simple"><ul>
+<li>随着计算机技术的快速发展，计算机软件除了需要进行数值计算以外，还会遇到大量非数值计算问题，例如：对目标数据进行寻优、查找等。</li>
+<li>为了编写一个“好”的处理，软件设计人员必须分析待处理的数据，以及待处理数之间的关系。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four35.png" alt="常见数据结构"></li>
+</ul>
+</div>
+
+<p><font size="7">4.3 文件格式设计</font></p>
+<div class="note simple"><p>如何保存计算机中处理的结果？以及如何使用原来的处理数据？这就需要考虑文件格式的设计了。<br>如果程序需要持久化的数据较少时，可以采用文件方式来保存数据。</p>
+<p>文件：存储在计算机外部介质上的数据的集合，例如：</p>
+<ul>
+<li>二进制文件</li>
+<li>ASCII文件</li>
+</ul>
+<p>除此之外，根据不同的数据类型和处理需求，还需考虑，例如：</p>
+<ul>
+<li>固定聚合类型如何存储？</li>
+<li>可变聚合类型如何存储？</li>
+<li>如果数据之间存在关系，应当如何存储数据？</li>
+<li>如果涉及到大量格式化数据，应该如何存储？<ul>
+<li>关系数据库</li>
+<li>非关系数据库</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="note simple"><p><font size="10">5. 过程设计</font><br>对<font color=red>各个模块</font>使用的<font color=red>算法</font>或者<font color=red>数据结构</font>进行设计，采用合适的建模工具对模块内容进行准确描述。</p>
+<p>可用于表述模块内部处理规格说明的工具</p>
+<ul>
+<li><font color=red>程序流程图</font></li>
+<li><font color=red>N-S盒图</font></li>
+<li>问题分析图</li>
+<li>过程设计语言</li>
+</ul>
+<p><font size="7"> 程序流程图</font></p>
+<div class="note simple"><p>流程图是对过程、算法、流程的一种图形表示，它对某个问题的定义、分析或解法进行描述，用定义完善的符号来表示操作、数据、流向等概念<br><font color=red>程序流程图</font>也称为程序框图，是一种比较直观、形象地描述过程的控制流程的图形工具，它包含5种基本的控制结构:<font color=red>顺序型、选择型、先判定型循环(While-do)、后判定型循环(do-while)和多分支选择型</font></p>
+<p>如下是流程图的基本符号<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four36.png" alt="流程图的基本符号"></p>
+<p>如下是流程图的基本控制结构<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four37.png" alt="流程图的基本控制结构"></p>
+</div>
+<div class="note warning simple"><p>绘制程序流程图时，除了需要遵循基本的绘图规则以外，还需要注意以下事项：</p>
+<ul>
+<li>程序流程图的符号绘制顺序为从上至下，从左至右。</li>
+<li>程序流程图必须只有一个入口、一个出口。</li>
+<li>流程处理有且仅能有唯一的一条出线。</li>
+<li>程序流向符号应尽量避免相互交叉，如果相交请选择绕过方式。</li>
+<li>程序流程图中的流程处理信息应使用规范的动词来表述，避免使用笼统词。</li>
+<li>流程图中的相同符号应大小一致。</li>
+<li>同一路径符号的指示箭头应只有一个。</li>
+<li>如果程序流程图能够一目了然，可省略开始符号和结束符号。</li>
+<li>在选择结构及重复结构中，选择条件或决策条件上标明的文字叙述应该简明清晰，路径上应标识“是”“否”或其他相对性文字指示。</li>
+<li>如果程序流程图中的使用到其他已经定义的子程序，则直接调用即可，无须重复绘制子程序的详细内容。</li>
+</ul>
+</div>
+<div class="note simple"><p>程序流程图的主要优点有:</p>
+<ul>
+<li>采用简单规范的符号，画法简单</li>
+<li>结构清晰，逻辑性强</li>
+<li>便于描述，容易理解</li>
+</ul>
+<p>而缺点是:</p>
+<ul>
+<li>不利于逐步求精的设计</li>
+<li>图中可用箭头随意地对控制进行转移，与结构化程序设计精神相悖</li>
+<li>不易于表示系统中所含的数据结构</li>
+<li>当目标系统较复杂时，流程图会变得很复杂、不清晰</li>
+</ul>
+<p>eg:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four38.png" alt="alt text"></p>
+</div>
+
+<p><font size="7">N-S盒图</font><br>N-S图是由Nassi和Shneiderman提出的，又被称为盒图，是一种符合结构化程序设计原则的图形工具。N-S图的基本符号如图所示<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four39.png" alt="N-S图的基本符号"></p>
+<div class="note simple"><ul>
+<li>N-S图用类似盒子的矩形以及矩形之间的嵌套来表示语句或语句序列，N-S图内部没有箭头，因此，它所表示的控制流程不能随便进行转移，N-S图的主要特点可以归纳为:<ul>
+<li>不允许随意的控制转移，有利于严格的结构化程序设计</li>
+<li>可以很方便地确定一个特定控制结构的作用域，以及局部数据和全局数据的作用域;</li>
+<li>可以很方便地表示嵌套关系以及模块之间的层次关系</li>
+</ul>
+</li>
+<li>用N-S图表示算法，思路清晰，结构良好，容易设计，因而可有效地提高程序设计的质量和效率</li>
+</ul>
+<p>例如:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four40.png" alt="N-S盒图实例"></p>
+</div>
+
+<p><font size="7">问题分析图(PAD图)</font></p>
+<div class="note simple"><p>PAD图(Problem Analysis Diagram)也叫做问题分析图，是由日本日立公司于1973年发明的，PAD图基于结构化程序设计思想，用二维树形结构的图来表示程序的控制流及逻辑结构。<br>在PAD图中，一条竖线代表一个层次，最左边的竖线是第一层控制结构，随着层次的加深，图形不断地向右展开。PAD图的基本控制符号如下:<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/four41.png" alt="alt text"></p>
+<p>补充:</p>
+<ul>
+<li>PAD图为常用的高级程序设计语言的各种控制语句提供了对应的图形符号，它的主要特点是:<ul>
+<li>PAD图表示的程序结构的执行顺序是自最左边的竖线的上端开始，自上而下，自左向右</li>
+<li>用PAD图表示的程序片段结构清晰，层次分明</li>
+<li>支持自顶向下、逐步求精的设计方法</li>
+<li>只能用于结构化的程序设计</li>
+</ul>
+</li>
+<li>PAD图不仅可以表示程序逻辑，还能表示数据结构</li>
+</ul>
+</div>
+
+<p><font size="7">过程设计语言</font></p>
+<div class="note simple"><p>结构化语言，又称程序设计语言（PDL）或伪代码，是一种用来以文本形式表示数据和处理过程的设计工具。</p>
+<p>PDL应具备以下特点：</p>
+<p>固定关键字语法：提供清晰的控制结构，并使用关键字标识结构的开始和结束，如if…fi。<br>自然语言的自由语法：用于描述处理特征，增强易用性。<br>数据描述手段：包括简单（如标量、数组）和复杂（如链表、层次结构）数据结构。<br>模块定义与调用技术：提供多种接口描述模式，方便模块的定义和调用。</p>
+</div>
+</div>
+
+<p><font size="10">6. 设计优化</font></p>
+<div class="note simple"><ul>
+<li>在有效的模块化机制前提下，首先使用最少量的模块实现系统功能：</li>
+<li>在满足信息要求的前提下，尽量使用最简单的数据结构</li>
+<li>在优化设计内容时，优先设计和优化对时间起决定性作用的模块</li>
+<li>首先在不考虑时间因素的前提下开发并精华软件结构</li>
+<li>评估并优化模块的处理过程，降低模块处理的时间复杂度和空间复杂度</li>
+<li>在保证模块功能的情况下，简化条件表达式，优化逻辑处理过程</li>
+<li>尽量使用高级程序设计语言来编写程序</li>
+<li>定位并孤立出软件中占用大量处理器资源的模块，必要时，重新设计或者采用依赖于机器的语言重写上述模块的代码</li>
+</ul>
+</div>
+
+<p><font size="10">7. 小结</font></p>
+<div class="note simple"><ul>
+<li>软件设计人员可以依据结构化分析阶段完成的数据流图、处理加工逻辑说明、状态转换图和数据模型来开展软件设计工作，实现软件需求到软件设计的映射。</li>
+<li>结构化程序设计模块独立性评价（耦合、内聚）</li>
+<li>数据流图到系统结构图的转换（变换流、事务流）</li>
+<li>数据设计（数据元素设计、数据结构设计、数据存储设计）</li>
+<li>软件模块的处理流程设计（程序流程图）</li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://little-seven-thirty.cc">LittleSevenThirty</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://little-seven-thirty.cc/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/">http://little-seven-thirty.cc/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://little-seven-thirty.cc" target="_blank">LittleSevenThirty⏰</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Study/">Study</a></div><div class="post_share"><div class="social-share" data-image="/image/SoftwareEngineering.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/09/20/npm-%E9%80%9F%E6%88%90/" title="npm 速成"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/npm.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">npm 速成</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/09/20/npm-%E9%80%9F%E6%88%90/" title="npm 速成"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/npm.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-20</div><div class="title">npm 速成</div></div></a></div><div><a href="/2024/09/20/yaml%E5%B8%B8%E7%94%A8/" title="yaml知识整理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/YAML.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-20</div><div class="title">yaml知识整理</div></div></a></div><div><a href="/2024/09/04/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/" title="标签外挂"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/siteicon/favicon.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-04</div><div class="title">标签外挂</div></div></a></div><div><a href="/2024/08/27/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0/" title="软件工程笔记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/SoftwareEngineering.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-08-27</div><div class="title">软件工程笔记</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/cat.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">LittleSevenThirty</div><div class="author-info__description">我想要搭建一个自己的个人博客网站，并在上面写一些自己想写的内容，借助各方资料完成了这个网站的搭建</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/LittleSevenThirty"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/LittleSevenThirty" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3100649706@qq.com" target="_blank" title="邮箱"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/479386526" target="_blank" title="哔哩哔哩"><i class="fab fa-bilibili"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">每天也就学一下，写一些，练一练，心态适中</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E7%BB%93%E6%9E%84%E5%8C%96%E8%AE%BE%E8%AE%A1%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-text">第四章 结构化设计（重点）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/" title="软件工程笔记第四章"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/SoftwareEngineering.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="软件工程笔记第四章"/></a><div class="content"><a class="title" href="/2024/10/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%AC%94%E8%AE%B0%E7%AC%AC%E5%9B%9B%E7%AB%A0/" title="软件工程笔记第四章">软件工程笔记第四章</a><time datetime="2024-10-29T06:49:09.000Z" title="发表于 2024-10-29 14:49:09">2024-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/20/npm-%E9%80%9F%E6%88%90/" title="npm 速成"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/npm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="npm 速成"/></a><div class="content"><a class="title" href="/2024/09/20/npm-%E9%80%9F%E6%88%90/" title="npm 速成">npm 速成</a><time datetime="2024-09-20T14:09:59.000Z" title="发表于 2024-09-20 22:09:59">2024-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/20/yaml%E5%B8%B8%E7%94%A8/" title="yaml知识整理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/YAML.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="yaml知识整理"/></a><div class="content"><a class="title" href="/2024/09/20/yaml%E5%B8%B8%E7%94%A8/" title="yaml知识整理">yaml知识整理</a><time datetime="2024-09-20T09:39:00.000Z" title="发表于 2024-09-20 17:39:00">2024-09-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/09/04/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/" title="标签外挂"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://npm.elemecdn.com/akilar-candyassets/image/siteicon/favicon.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="标签外挂"/></a><div class="content"><a class="title" href="/2024/09/04/%E6%A0%87%E7%AD%BE%E5%A4%96%E6%8C%82/" title="标签外挂">标签外挂</a><time datetime="2024-09-04T00:22:18.000Z" title="发表于 2024-09-04 08:22:18">2024-09-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="计算机网络笔记"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.52112.com/180529/JPG-180529_259/PmUqo8xxDS_small.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机网络笔记"/></a><div class="content"><a class="title" href="/2024/08/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/" title="计算机网络笔记">计算机网络笔记</a><time datetime="2024-08-27T15:05:07.000Z" title="发表于 2024-08-27 23:05:07">2024-08-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/image/starfooter.jpeg')"><div id="footer-wrap"><div class="copyright">&copy;2024 By LittleSevenThirty</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="Https://beian.miit.gov.cn"><img class="icp-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://haiyong.site/img/icp.png" style="color:black" target="_blank"><span>备案号：渝ICP备2024040042号-1</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
